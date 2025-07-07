@@ -82,7 +82,7 @@ Smart Cart is a modern e-commerce application that enhances the shopping experie
 ### 1. Clone the repository
 
 ```
-git clone [https://github.com/your-username/smartcart.git](https://github.com/San2021331091/Smart-Cart.git)
+git clone https://github.com/San2021331091/Smart-Cart.git
 cd smartcart
 ```
 
