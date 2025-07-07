@@ -53,25 +53,18 @@ Smart Cart is a modern e-commerce application that enhances the shopping experie
 
 ---
 
----
 
 ## 📸 App Screenshots
 
-<h2>🖼️ Screenshots</h2>
-
-<table>
-  <tr>
-
-    <td><img src="screenshots/homescreen.png" alt="Home Screen" width="200"/></td>
-    <td><img src="screenshots/productItemsScreen.png" alt="Items Screen" width="200"/></td>
-  </tr>
-  <tr>
-    <td><img src="screenshots/singleproductscreen.png" alt="Product Single Screen" width="200"/></td>
-    <td><img src="screenshots/cartscreen.png" alt="Cart Scree" width="200"/></td>
-    <td><img src="screenshots/aichatscreen.png" alt="Chat Screen" width="200"/></td>
-  </tr>
-
-</table>
+<div align="center">
+  <img src="screenshorts/homescreen.png" width="45%" alt="Home Screen"/>
+  <img src="screenshorts/productItemsScreen.png" width="45%" alt="Items Screen"/>
+  <br/>
+  <img src="screenshorts/singleproductscreen.png" width="45%" alt="Product Single Screen"/>
+  <img src="screenshorts/cartscreen.png" width="45%" alt="Cart Screen"/>
+  <br/>
+  <img src="screenshorts/aichatscreen.png" width="45%" alt="AI Chat Screen"/>
+</div>
 
 
 
