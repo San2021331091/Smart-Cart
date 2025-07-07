@@ -55,6 +55,26 @@ Smart Cart is a modern e-commerce application that enhances the shopping experie
 
 ---
 
+## 📸 App Screenshots
+
+<h2>🖼️ Screenshots</h2>
+
+<table>
+  <tr>
+
+    <td><img src="screenshots/homescreen.png" alt="Home Screen" width="200"/></td>
+    <td><img src="screenshots/productItemscreen" alt="Movie Info Screen" width="200"/></td>
+  </tr>
+  <tr>
+    <td><img src="screenshots/singleproductscreen" alt="Movie Cast Screen" width="200"/></td>
+    <td><img src="screenshots/cartscreen" alt="Movie List Screen" width="200"/></td>
+    <td><img src="screenshots/aichatscreen" alt="Streaming Screen" width="200"/></td>
+  </tr>
+
+</table>
+
+
+
 ## 📱 Requirements
 
 * **Node.js** ≥ 18
