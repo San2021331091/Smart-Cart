@@ -9,7 +9,7 @@ Smart Cart is a modern e-commerce application that enhances the shopping experie
 ## 🚀 Features
 
 * 🗺️ **Map Integration** using MapLibre and React Native Maps
-* 🎙️ **Voice to Text** capabilities with `react-native-voice-to-text` and `react-native-speech`
+* 🎙️ **Voice to Text** capabilities with custom native modules
 * 📍 **Real-time Location** using `react-native-community/geolocation` and Geolocation API
 * 📦 **Smart Navigation** with React Navigation (stack and bottom tabs)
 * 🧠 **Persistent Storage** using AsyncStorage
@@ -82,7 +82,7 @@ Smart Cart is a modern e-commerce application that enhances the shopping experie
 ### 1. Clone the repository
 
 ```
-git clone https://github.com/your-username/smartcart.git
+git clone [https://github.com/your-username/smartcart.git](https://github.com/San2021331091/Smart-Cart.git)
 cd smartcart
 ```
 
