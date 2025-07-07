@@ -146,3 +146,7 @@ npm run test
 ## 📄 License
 
 This project is licensed under the **MIT License**.
+
+[Download APK](https://www.upload-apk.com/xWSp79MUdpt4Bnt)
+
+
