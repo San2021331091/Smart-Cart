@@ -8,26 +8,25 @@ import {
   Image,
   PermissionsAndroid,
   Platform,
+  Alert,
 } from 'react-native';
 
 import { useNavigation } from '@react-navigation/native';
-import { useProductSearch } from '../../view-models/hooks/useProductSearch.ts';
-import { NativeStackNavigationProp } from  '@react-navigation/native-stack';
-import { RootStackParamList } from '../../navigation_types/NavigationTypes.ts';
-import { Product } from '../../models/product/Product.ts';
+import { useProductSearch } from '../view-models/hooks/useProductSearch';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { RootStackParamList } from '../navigation_types/NavigationTypes';
+import { Product } from '../models/product/Product';
 
 import LinearGradient from 'react-native-linear-gradient';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import SearchBar from '../components/SearchBar.tsx';
-
-import { startSpeechToText } from 'react-native-voice-to-text';
-import {searchResultsColor, searchScreenColor} from '../../colors/Colors.ts';
-import ProgressBar from '../components/ProgressBar.tsx';
+import SearchBar from '../components/SearchBar';
+import { NativeModules } from 'react-native';
+import { searchResultsColor, searchScreenColor } from '../colors/Colors';
+import ProgressBar from '../components/ProgressBar';
 
 const Search: React.FC = (): React.JSX.Element => {
   const [query, setQuery] = useState<string>('');
-  const [listening, setListening] = useState<boolean>(false);
-
+  const { SpeechModule } = NativeModules;
   const { results, loading, error } = useProductSearch(query);
   const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
 
@@ -48,16 +47,37 @@ const Search: React.FC = (): React.JSX.Element => {
 
   const handleMicPress = async () => {
     const hasPermission = await requestAudioPermission();
-    if (!hasPermission) return;
+    if (!hasPermission) {
+      Alert.alert('Permission Denied', 'Microphone access is required for voice search.');
+      return;
+    }
+
+    if (!SpeechModule || !SpeechModule.startSpeechRecognition) {
+      Alert.alert('Error', 'Speech module is not available.');
+      return;
+    }
 
     try {
-      setListening(true);
-      const text = await startSpeechToText();
-      if (typeof text === 'string' && text.trim()) setQuery(text);
-    } catch (error) {
-      console.error('Voice recognition error:', error);
-    } finally {
-      setListening(false);
+      console.log('🎤 Starting speech recognition...');
+
+      const speechPromise = SpeechModule.startSpeechRecognition();
+
+      const timeoutPromise = new Promise((_, reject) =>
+        setTimeout(() => reject(new Error('Timeout: No speech input detected')), 10000)
+      );
+
+      const result = await Promise.race([speechPromise, timeoutPromise]);
+
+      console.log('✅ Speech recognition result:', result);
+
+      if (typeof result === 'string' && result.trim()) {
+        setQuery(result);
+      } else {
+        Alert.alert('No Input', 'No speech was recognized.');
+      }
+    } catch (err: any) {
+      console.error('❌ Speech recognition error:', err);
+      Alert.alert('Speech Error', err?.message || 'Something went wrong.');
     }
   };
 
@@ -81,9 +101,7 @@ const Search: React.FC = (): React.JSX.Element => {
           onMicPress={handleMicPress}
         />
 
-        {listening && (
-          <Text className="text-white mt-2 text-center italic">Listening...</Text>
-        )}
+        {/* Removed: Listening to text */}
 
         {loading && <ProgressBar />}
         {error && <Text className="text-red-300 mt-2">{error}</Text>}
