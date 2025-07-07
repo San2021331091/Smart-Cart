@@ -12,17 +12,17 @@ import {
 } from 'react-native';
 
 import { useNavigation } from '@react-navigation/native';
-import { useProductSearch } from '../view-models/hooks/useProductSearch';
+import { useProductSearch } from '../../view-models/hooks/useProductSearch';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { RootStackParamList } from '../navigation_types/NavigationTypes';
-import { Product } from '../models/product/Product';
+import { RootStackParamList } from '../../navigation_types/NavigationTypes';
+import { Product } from '../../models/product/Product';
 
 import LinearGradient from 'react-native-linear-gradient';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import SearchBar from '../components/SearchBar';
+import SearchBar from '../../components/SearchBar';
 import { NativeModules } from 'react-native';
-import { searchResultsColor, searchScreenColor } from '../colors/Colors';
-import ProgressBar from '../components/ProgressBar';
+import { searchResultsColor, searchScreenColor } from '../../colors/Colors';
+import ProgressBar from '../../components/ProgressBar';
 
 const Search: React.FC = (): React.JSX.Element => {
   const [query, setQuery] = useState<string>('');
