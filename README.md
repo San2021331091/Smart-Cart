@@ -34,7 +34,7 @@ Smart Cart is a modern e-commerce application that enhances the shopping experie
 - **Flask** – Python micro web framework for building web applications and APIs
 - **Scikit-learn** – Open-source Python machine learning library used for smart recommendations
 - **SlimPHP** – Lightweight PHP micro framework for quick API development
-- **ASP.NET Core** – Open-source modular web application framework for building robust backend services
+- **ASP.NET Core** – Open-source modular C# web application framework for building robust backend services
 - **Fiber** – Go web framework built on Fasthttp for fast HTTP servers
 
 ---
