@@ -149,4 +149,6 @@ This project is licensed under the **MIT License**.
 
 [Download APK](https://www.upload-apk.com/xWSp79MUdpt4Bnt)
 
+Backend link: https://github.com/San2021331091/Smart-Cart-Backend.git
+
 
