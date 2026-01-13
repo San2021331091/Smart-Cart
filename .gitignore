@@ -132,3 +132,5 @@ coverage/
 # =========================
 !android/gradle/wrapper/gradle-wrapper.jar
 !ios/Podfile
+
+Smart-Cart-Backend/
