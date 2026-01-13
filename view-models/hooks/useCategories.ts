@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import { CategoryService } from '../../models/api/categoryApi.ts';
+import { CategoryService } from '../../models/api/categoryApi';
 
-import { Category } from '../../models/category/Category.ts';
+import { Category } from '../../models/category/Category';
 export const useCategories = () => {
   const [categories, setCategories] = useState<Category[]>([]);
   const [loading, setLoading] = useState<boolean>(true);

@@ -1,28 +1,53 @@
-export const homeScreenColor:string[] = ['#00b09b', '#000428'];
-export const trendingColor:string[] = ['#0f2027', '#2c5364'];
-export const todaySalesColor:string[] = ['#052e16', '#1e3c72'];
-export const productFilterColor:string[] = ['#16222A', '#1e3a8a'];
-export const productScreenColor:string[] = ['#0F2027', '#203A43'];
-export const orderItemColor:string[] = ['#00FF87', '#9D00FF'];
-export const singleProductScreenColor:string[] = ['#4CA1AF', '#2C3E50'];
-export const searchScreenColor:string[] = ['#00F260', '#0575E6'];
-export const notificationScreenColor:string[] = ['#001F3F', '#007F5F'];
-export const notificationItemColor:string[] = ['#001F3F', '#007F5F'];
-export const notificationHeadingColor:string[] = ['#6495ED', '#00008B'];
-export const searchResultsColor:string[] = ['#0047AB', '#20e3b2'];
-export const cartScreenColor:string[] = ['#0f3443', '#00A36C'];
-export const loginScreenColor:string[] = ['#1A2980', '#26D0CE'];
-export const registerScreenColor:string[] = ['#005C97', '#0b486b'];
-export const profileScreenColor:string[] = ['#10B981', '#3B82F6'];
-export const ordersListScreenColor:string[] = ['#60A5FA','#34D399'];
-export const bottomTabColor:string[] = ['#0B3D3B', '#134E4A'];
-export const confirmationScreenColor:string[] = ['#009E60', '#2AAA8A'];
-export const addressScreenColor:string[] = ['#00C851', '#33b5e5'];
-export const paymentScreenColor:string[] = ['#1A2980', '#26D0CE'];
-export const orderScreenColor:string[] = ['#009E60', '#2AAA8A'];
-export const addressCardColor:string[] = ['#00c6ff', '#0072ff'];
-export const orderCardColor:string[] =['#32cd32', '#00bfff'];
-export const giftScreenColor:string[] =['#40B5AD', '#4682B4']
-export const aiScreenColor:string[] =['#6a11cb','#11998e'];
-export const messageSendColor:string[] = ['#7F00FF', '#0D98BA'];
+export const homeScreenColor: string[] = ['#0F766E', '#022C22'];
 
+export const trendingColor: string[] = ['#0B3A3E', '#134E4A'];
+
+export const todaySalesColor: string[] = ['#052E16', '#064E3B'];
+
+export const productFilterColor: string[] = ['#0F2027', '#064E3B'];
+
+export const productScreenColor: string[] = ['#0F2027', '#134E4A'];
+
+export const orderItemColor: string[] = ['#16A34A', '#047857'];
+
+export const singleProductScreenColor: string[] = ['#0F766E', '#1E293B'];
+
+export const searchScreenColor: string[] = ['#047857', '#0F766E'];
+
+export const notificationScreenColor: string[] = ['#022C22', '#064E3B'];
+
+export const notificationItemColor: string[] = ['#064E3B', '#0F766E'];
+
+export const notificationHeadingColor: string[] = ['#34D399', '#047857'];
+
+export const searchResultsColor: string[] = ['#064E3B', '#14B8A6'];
+
+export const cartScreenColor: string[] = ['#0F3443', '#047857'];
+
+export const loginScreenColor: string[] = ['#022C22', '#064E3B'];
+
+export const registerScreenColor: string[] = ['#064E3B', '#0F766E'];
+
+export const profileScreenColor: string[] = ['#047857', '#0D9488'];
+
+export const ordersListScreenColor: string[] = ['#047857', '#34D399'];
+
+export const bottomTabColor: string[] = ['#022C22', '#064E3B'];
+
+export const confirmationScreenColor: string[] = ['#047857', '#16A34A'];
+
+export const addressScreenColor: string[] = ['#047857', '#34D399'];
+
+export const paymentScreenColor: string[] = ['#022C22', '#064E3B'];
+
+export const orderScreenColor: string[] = ['#064E3B', '#047857'];
+
+export const addressCardColor: string[] = ['#0D9488', '#047857'];
+
+export const orderCardColor: string[] = ['#16A34A', '#047857'];
+
+export const giftScreenColor: string[] = ['#0F766E', '#134E4A'];
+
+export const aiScreenColor: string[] = ['#022C22', '#0F766E'];
+
+export const messageSendColor: string[] = ['#047857', '#0D9488'];

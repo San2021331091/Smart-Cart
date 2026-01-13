@@ -1,40 +1,40 @@
-import React, { useEffect, useState } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer, NavigationState } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+import React, { useEffect, useState } from 'react';
+import { StyleSheet, Text, View } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import Animated, {
-  useSharedValue,
-  useAnimatedStyle,
-  withSpring,
+    useAnimatedStyle,
+    useSharedValue,
+    withSpring,
 } from 'react-native-reanimated';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 // Screens
-import Login from '../views/screens/Login';
-import Register from '../views/screens/Register';
-import AuthLoading from '../views/screens/AuthLoading';
-import Home from '../views/screens/Home';
-import Products from '../views/screens/Products';
-import Profile from '../views/screens/Profile';
-import Cart from '../views/screens/Cart';
-import AIChat from '../views/screens/AIChat';
-import SingleProduct from '../views/screens/SingleProduct';
-import Confirmation from '../views/screens/Confirmation';
-import Address from '../views/screens/Address';
-import Delivery from '../views/screens/Delivery';
-import Payment from '../views/screens/Payment';
-import PlaceOrder from '../views/screens/PlaceOrder';
-import Gift from '../views/screens/Gift';
-import Search from '../views/screens/Search';
-import Notification from '../views/screens/Notification';
+import Address from '../screens/Address';
+import AIChat from '../screens/AIChat';
+import AuthLoading from '../screens/AuthLoading';
+import Cart from '../screens/Cart';
+import Confirmation from '../screens/Confirmation';
+import Delivery from '../screens/Delivery';
+import Gift from '../screens/Gift';
+import Home from '../screens/Home';
+import Login from '../screens/Login';
+import Notification from '../screens/Notification';
+import Payment from '../screens/Payment';
+import PlaceOrder from '../screens/PlaceOrder';
+import Products from '../screens/Products';
+import Profile from '../screens/Profile';
+import Register from '../screens/Register';
+import Search from '../screens/Search';
+import SingleProduct from '../screens/SingleProduct';
 // Navigation types and colors
-import { BottomTabParamList, RootStackParamList } from '../navigation_types/NavigationTypes';
 import { bottomTabColor } from '../colors/Colors';
+import { BottomTabParamList, RootStackParamList } from '../navigation_types/NavigationTypes';
 
-import {useCart} from '../view-models/hooks/useCart';
-import YourOrders from '../views/screens/YourOrders';
+import YourOrders from '../screens/YourOrders';
+import { useCart } from '../view-models/hooks/useCart';
 
 
 const Stack = createNativeStackNavigator<RootStackParamList>();

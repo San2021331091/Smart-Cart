@@ -17,3 +17,4 @@ export const supabase = createClient(
     },
   }
 );
+export const getUser = () => supabase.auth.getUser();

@@ -2,7 +2,7 @@
 
 Smart Cart is a modern e-commerce application that enhances the shopping experience with features like real-time location tracking, voice input, smart navigation, and intuitive design.
 
-> ✨ Built with **MVVM architecture** and a native **Jetpack Compose splash screen** (Kotlin) for a seamless startup experience on Android.
+Designed with a clean MVVM architecture following SOLID principles, promoting separation of concerns, scalability, and testability, along with a native Jetpack Compose–based splash screen (Kotlin) to ensure a smooth and maintainable Android startup experience.
 
 ---
 

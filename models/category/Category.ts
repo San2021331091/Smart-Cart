@@ -3,3 +3,10 @@ export interface Category {
   name: string;
   imgurl: string;
 }
+export interface SubCategory {
+  id: number;
+  slug: string;
+  name: string;
+}
+
+
