@@ -147,7 +147,7 @@ npm run test
 
 This project is licensed under the **MIT License**.
 
-[Download APK](https://www.upload-apk.com/xWSp79MUdpt4Bnt)
+[Download APK](https://www.upload-apk.com/BTsnQkdYYisBiVl)
 
 Backend link: https://github.com/San2021331091/Smart-Cart-Backend.git
 
