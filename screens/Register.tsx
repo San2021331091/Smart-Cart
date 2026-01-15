@@ -1,8 +1,7 @@
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import React, { useState } from 'react';
+import React from 'react';
 import {
-    Alert,
     KeyboardAvoidingView,
     ScrollView,
     Text,
@@ -13,7 +12,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import Animated, { FadeInUp } from 'react-native-reanimated';
 import { registerScreenColor } from '../colors/Colors';
 import { RootStackParamList } from '../navigation_types/NavigationTypes';
-import { supabase } from '../supabase/SupabaseClient';
+import { useRegister } from '../view-models/hooks/useRegister';
 
 type RegisterScreenNavigationProp = NativeStackNavigationProp<
   RootStackParamList,
@@ -22,73 +21,21 @@ type RegisterScreenNavigationProp = NativeStackNavigationProp<
 
 const Register: React.FC = (): React.JSX.Element => {
   const navigation = useNavigation<RegisterScreenNavigationProp>();
-
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
-  const [loading, setLoading] = useState(false);
-
-  const handleRegister = async () => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*?&]{6,}$/;
-    const nameRegex = /^[a-zA-Z\s]{2,}$/;
-
-    if (!name || !email || !password || !confirmPassword) {
-      Alert.alert('Error', 'Please fill all fields.');
-      return;
-    }
-
-    if (!nameRegex.test(name)) {
-      Alert.alert('Invalid Name', 'Name should contain only letters and spaces.');
-      return;
-    }
-
-    if (!emailRegex.test(email)) {
-      Alert.alert('Invalid Email', 'Please enter a valid email address.');
-      return;
-    }
-
-    if (!passwordRegex.test(password)) {
-      Alert.alert(
-        'Weak Password',
-        'Password must be at least 6 characters and include a letter and a number.'
-      );
-      return;
-    }
-
-    if (password !== confirmPassword) {
-      Alert.alert('Error', 'Passwords do not match.');
-      return;
-    }
-
-    try {
-      setLoading(true);
-
-      const { data, error } = await supabase.auth.signUp({
-        email,
-        password,
-        options: {
-          data: { full_name: name },
-        },
-      });
-
-      if (error) {
-        Alert.alert('Registration failed', error.message);
-        console.error('Registration failed:', error);
-      } else {
-        Alert.alert(
-          'Success',
-          'Account created! Please check your email to confirm your account.'
-        );
-        navigation.navigate({ name: 'Login', params: '' });
-      }
-    } catch (error) {
-      Alert.alert('Error', 'Something went wrong.');
-    } finally {
-      setLoading(false);
-    }
-  };
+ 
+  const {
+    name,
+    email,
+    password,
+    confirmPassword,
+    loading,
+    setName,
+    setEmail,
+    setPassword,
+    setConfirmPassword,
+   handleRegister,
+  } = useRegister({
+    onSuccess: () => navigation.navigate({ name: 'Login', params: '' }),
+  });
 
 
   return (

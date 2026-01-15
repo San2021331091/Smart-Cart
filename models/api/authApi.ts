@@ -11,7 +11,7 @@ export class AuthService extends DefaultApiService {
     return this.post('/login', user, token);
   }
 
-  public async loginToBackend(user: UserInfo, accessToken: string)  {
-  return await this.login(user, accessToken);
-}
+  public async loginToBackend(user: UserInfo, accessToken: string) {
+    return await this.login(user, accessToken);
+  }
 }

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Alert } from 'react-native';
-import { supabase } from '../../supabase/SupabaseClient.ts';
-import {AuthService } from '../../models/api/authApi.ts';
+import { supabase } from '../../supabase/SupabaseClient';
+import {AuthService } from '../../models/api/authApi';
 
 export const useLogin = () => {
   const [loading, setLoading] = useState<boolean>(false);
