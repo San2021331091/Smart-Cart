@@ -51,6 +51,12 @@ Designed with a clean MVVM architecture following SOLID principles, promoting se
 - **User Profile** – Built with React Native for smooth UI and experience
 - **Order History** – Backend services built on ASP.NET Core, integrated with React Native via RESTful APIs
 
+**SmartCart GPT powered by CXgenie** is designed to assist users with various aspects of their shopping experience. It specializes in answering questions related to:
+
+- **Cart**: Managing items in the shopping cart, adding or removing products, and checking cart details.  
+- **Location**: Providing information about delivery areas, store locations, and tracking shipments.  
+- **Payment**: Assisting with payment methods, processing payments, and resolving payment issues.  
+- **Order Placing**: Guiding users through the order placement process, confirming orders, and providing order updates.  
 ---
 
 
@@ -147,7 +153,7 @@ npm run test
 
 This project is licensed under the **MIT License**.
 
-[Download APK](https://www.upload-apk.com/BTsnQkdYYisBiVl)
+[Download APK](https://drive.google.com/file/d/1DBfzrEo9_UHvtiriwKTGb10v5og6Ipt7/view?usp=sharing)
 
 Backend link: https://github.com/San2021331091/Smart-Cart-Backend.git
 
