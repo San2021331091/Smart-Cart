@@ -35,7 +35,7 @@ const OrderedItems: React.FC<OrderedItemsProps> = ({ uid }) => {
     <LinearGradient
       key={order?.id}
       colors={orderItemColor}
-      start={{ x: 0, y: 0 }}
+      start={{ x: 0, y: 0 }} 
       end={{ x: 1, y: 1 }}
       className="rounded-2xl p-4 mb-4 shadow-md"
     >

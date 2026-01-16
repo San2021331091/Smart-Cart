@@ -1,22 +1,23 @@
 import { RouteProp, useNavigation, useRoute } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import React from 'react';
+import React, { useState } from 'react';
 import {
-    Alert,
-    Dimensions,
-    FlatList,
-    Image,
-    SafeAreaView,
-    ScrollView,
-    Text,
-    TouchableOpacity,
-    View,
+  Alert,
+  Dimensions,
+  FlatList,
+  Image,
+  Modal,
+  SafeAreaView,
+  ScrollView,
+  Text,
+  TouchableOpacity,
+  View,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { singleProductScreenColor } from '../colors/Colors';
 import { RootStackParamList } from '../navigation_types/NavigationTypes';
-import { supabase } from '../supabase/SupabaseClient';
+import { getUser } from '../supabase/SupabaseClient';
 import useAddToCart from '../view-models/hooks/useAddToCart';
 import useProductById from '../view-models/hooks/useProductById';
 import useProducts from '../view-models/hooks/useProducts';
@@ -24,7 +25,8 @@ import ProductList from '../components/ProductList';
 import ProgressBar from '../components/ProgressBar';
 import Review from '../components/Reviews';
 import SharedHeader from '../components/SharedHeader';
-const { width } = Dimensions.get('window');
+import CXGenieWidget from '../components/CXGenieWidget';
+const { width, height} = Dimensions.get('window');
 const size = width * 0.4;
 
 const SingleProduct: React.FC = (): React.JSX.Element => {
@@ -34,11 +36,11 @@ const SingleProduct: React.FC = (): React.JSX.Element => {
 
   const { product, loading, error } = useProductById(id);
   const { products } = useProducts(`similar/${id}`);
-
+  const [chatVisible, setChatVisible] = useState<boolean>(false);
   const { addToCart, loading: cartLoading, error: cartError, success } = useAddToCart();
 
   const handleAddToCart = async () => {
-    const { data: { user }, error } = await supabase.auth.getUser();
+    const { data: { user }, error } = await getUser();
 
     if (error || !user) {
       return Alert.alert('Please login to add to cart');
@@ -70,9 +72,9 @@ const SingleProduct: React.FC = (): React.JSX.Element => {
 
   if (loading) {
     return (
-    <SafeAreaView className="bg-[#033c4f] flex-1 justify-center items-center">
-      <ProgressBar/>
-    </SafeAreaView>
+      <SafeAreaView className="bg-[#033c4f] flex-1 justify-center items-center">
+        <ProgressBar />
+      </SafeAreaView>
     );
   }
 
@@ -96,13 +98,13 @@ const SingleProduct: React.FC = (): React.JSX.Element => {
       <TouchableOpacity
         onPress={() => navigation.goBack()}
         className="absolute top-6 left-4 z-10 bg-white rounded-full p-2 shadow-lg"
-        style={{elevation: 5}}>
+        style={{ elevation: 5 }}>
         <Icon name="arrow-back" size={22} color="#0000FF" />
       </TouchableOpacity>
 
       <ScrollView
         className="px-4 pt-20"
-        contentContainerStyle={{paddingBottom: 110}}
+        contentContainerStyle={{ paddingBottom: 180 }}
         showsVerticalScrollIndicator={false}>
         <SafeAreaView>
           <SharedHeader />
@@ -111,7 +113,7 @@ const SingleProduct: React.FC = (): React.JSX.Element => {
         <View className="mb-4">
           {images.length === 1 ? (
             <Image
-              source={{uri: images[0]}}
+              source={{ uri: images[0] }}
               style={{
                 width: width - 40,
                 height: width * 0.9,
@@ -127,9 +129,9 @@ const SingleProduct: React.FC = (): React.JSX.Element => {
               pagingEnabled
               keyExtractor={(_item, index) => index.toString()}
               showsHorizontalScrollIndicator={false}
-              renderItem={({item}) => (
+              renderItem={({ item }) => (
                 <Image
-                  source={{uri: item}}
+                  source={{ uri: item }}
                   style={{
                     width: width - 40,
                     height: width * 0.8,
@@ -199,7 +201,7 @@ const SingleProduct: React.FC = (): React.JSX.Element => {
               Dimensions (L×W×H): {product?.dimensions?.depth}×
               {product?.dimensions?.width}×{product?.dimensions?.height} cm
             </Text>
-            <Text className="text-sm text-white relative" style={{top: -6}}>
+            <Text className="text-sm text-white relative" style={{ top: -6 }}>
               3
             </Text>
           </View>
@@ -214,7 +216,7 @@ const SingleProduct: React.FC = (): React.JSX.Element => {
           </Text>
           <Text className="text-white text-lg font-extrabold">QR Code:</Text>
           <Image
-            source={{uri: product?.meta?.qrCode}}
+            source={{ uri: product?.meta?.qrCode }}
             style={{
               width: size,
               height: size,
@@ -234,8 +236,10 @@ const SingleProduct: React.FC = (): React.JSX.Element => {
         </TouchableOpacity>
 
         <SafeAreaView className="mt-4">
-          <Review productId={parseInt(id)}/>
+          <Review productId={parseInt(id)} />
         </SafeAreaView>
+
+
 
         <View className="mt-8">
           <ProductList
@@ -247,10 +251,73 @@ const SingleProduct: React.FC = (): React.JSX.Element => {
           />
         </View>
 
-       
-
-        
+  
       </ScrollView>
+         {/* Floating Chat Button */}
+      <TouchableOpacity
+        style={{
+          position: 'absolute',
+          bottom: 30,
+          right: 20,
+          backgroundColor: '#0E3073',
+          width: 60,
+          height: 60,
+          borderRadius: 30,
+          justifyContent: 'center',
+          alignItems: 'center',
+          shadowColor: '#000',
+          shadowOffset: { width: 0, height: 2 },
+          shadowOpacity: 0.3,
+          shadowRadius: 4,
+          elevation: 5,
+        }}
+        onPress={() => setChatVisible(true)}
+      >
+        <Icon name="chatbubble-ellipses" size={28} color="#fff" />
+      </TouchableOpacity>
+
+      {/* Modal for Chat Widget */}
+      <Modal
+        animationType="slide"
+        transparent={true}
+        visible={chatVisible}
+        onRequestClose={() => setChatVisible(false)}
+      >
+        <SafeAreaView
+          style={{
+            flex: 1,
+            backgroundColor: 'rgba(0,0,0,0.5)',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
+          <View
+            style={{
+              width: width - 40,
+              height: height * 0.7,
+              backgroundColor: '#fff',
+              borderRadius: 16,
+              overflow: 'hidden',
+            }}
+          >
+            {/* Close Button */}
+            <TouchableOpacity
+              style={{
+                position: 'absolute',
+                top: 10,
+                right: 10,
+                zIndex: 10,
+              }}
+              onPress={() => setChatVisible(false)}
+            >
+              <Icon name="close-circle" size={28} color="#007AFF" />
+            </TouchableOpacity>
+
+            {/* WebView Chat Widget */}
+            <CXGenieWidget />
+          </View>
+        </SafeAreaView>
+      </Modal>
     </LinearGradient>
   );
 };

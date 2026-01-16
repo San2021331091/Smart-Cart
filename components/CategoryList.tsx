@@ -19,13 +19,13 @@ const CategoryList: React.FC<CategoryListProps> = ({ categories }) => {
     <TouchableOpacity style={styles.itemContainer}>
       <View style={styles.imageWrapper}>
         <Image
-          source={{ uri: item.imgurl }}
+          source={{ uri: item?.imgurl }}
           style={styles.image}
           resizeMode="contain"
         />
       </View>
       <Text className="text-xl text-center mt-1 capitalize text-white font-extrabold">
-        {item.name.replace(/-/g, ' ')}
+        {item?.name?.replace(/-/g, ' ')}
       </Text>
     </TouchableOpacity>
   );
@@ -35,7 +35,7 @@ const CategoryList: React.FC<CategoryListProps> = ({ categories }) => {
       <FlatList
         data={categories}
         horizontal
-        keyExtractor={(item) => item.id}
+        keyExtractor={(item) => item?.id}
         renderItem={renderItem}
         showsHorizontalScrollIndicator={false}
       />

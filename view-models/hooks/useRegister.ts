@@ -1,18 +1,18 @@
 import { useState } from 'react';
 import { Alert } from 'react-native';
 import { supabase } from '../../supabase/SupabaseClient';
-
+  
 
 interface UseRegisterProps {
     onSuccess?: () => void;
 }
 
 export const useRegister = ({ onSuccess }: UseRegisterProps = {}) => {
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [confirmPassword, setConfirmPassword] = useState('');
-    const [loading, setLoading] = useState(false);
+    const [name, setName] = useState<string>('');
+    const [email, setEmail] = useState<string>('');
+    const [password, setPassword] = useState<string>('');
+    const [confirmPassword, setConfirmPassword] = useState<string>('');
+    const [loading, setLoading] = useState<boolean>(false);
 
     const validate = (): boolean => {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;

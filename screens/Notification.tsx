@@ -3,9 +3,9 @@ import React from 'react';
 import { SafeAreaView, ScrollView, Text, TouchableOpacity } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import { notificationHeadingColor, notificationItemColor, notificationScreenColor } from '../colors/Colors.ts';
-import useNotifications from '../view-models/hooks/useNotifications.ts';
-import ProgressBar from '../components/ProgressBar.tsx';
+import { notificationHeadingColor, notificationItemColor, notificationScreenColor } from '../colors/Colors';
+import useNotifications from '../view-models/hooks/useNotifications';
+import ProgressBar from '../components/ProgressBar';
 
 const Notification:React.FC = ():React.JSX.Element => {
   const { notifications, loading, error } = useNotifications();
@@ -14,7 +14,7 @@ const Notification:React.FC = ():React.JSX.Element => {
   if (loading) {
     return (
 
-      <SafeAreaView className="bg-[#035e18] flex-1 justify-center items-center">
+      <SafeAreaView className="bg-[#01696d] flex-1 justify-center items-center">
       <ProgressBar/>
       </SafeAreaView>
     );

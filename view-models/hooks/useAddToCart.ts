@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import { CartService } from '../../models/api/cartApi.ts';
-import { AddToCart } from '../../models/cart/AddToCart.ts';
+import { CartService } from '../../models/api/cartApi';
+import { AddToCart } from '../../models/cart/AddToCart';
 
 const useAddToCart = () => {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);   
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
   const cart = new CartService();

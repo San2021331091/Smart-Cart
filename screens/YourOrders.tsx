@@ -2,7 +2,7 @@ import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import { SafeAreaView, Text, TouchableOpacity, View } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import Icon from 'react-native-vector-icons/Ionicons'; // <- Import Ionicons or your preferred icon set
+import Icon from 'react-native-vector-icons/Ionicons'; 
 import { ordersListScreenColor } from '../colors/Colors.ts';
 import { useProfile } from '../view-models/hooks/useProfile.ts';
 import OrderedItems from '../components/OrderedItems.tsx';

@@ -134,7 +134,7 @@ const Search: React.FC = (): React.JSX.Element => {
                   <Text className="text-white text-lg font-bold mt-1">${item?.price}</Text>
                 </View>
               </TouchableOpacity>
-            </LinearGradient>
+            </LinearGradient> 
           )}
           ListEmptyComponent={
             !loading && query.trim() !== '' ? (

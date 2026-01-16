@@ -80,6 +80,7 @@ const Cart: React.FC = (): React.JSX.Element => {
                 itemCount: cartItems.length,
               })
             }
+             disabled={cartItems.length === 0}
           >
             <Text className="text-center text-white font-bold text-lg">
               Proceed to Buy ({cartItems.length} items)

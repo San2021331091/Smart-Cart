@@ -1,13 +1,13 @@
 import React from 'react';
 import { SafeAreaView, ScrollView, StyleSheet } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import { homeScreenColor } from '../colors/Colors.ts';
-import ImageCarousel from '../components/ImageCarousel.tsx';
-import ProductFiltering from '../components/ProductFiltering.tsx';
-import SharedHeader from '../components/SharedHeader.tsx';
-import TodaySales from '../components/TodaySales.tsx';
-import TrendingProducts from '../components/TrendingProducts.tsx';
-import MainCategories from '../components/MainCategories.tsx';
+import { homeScreenColor } from '../colors/Colors';
+import ImageCarousel from '../components/ImageCarousel';
+import ProductFiltering from '../components/ProductFiltering';
+import SharedHeader from '../components/SharedHeader';
+import TodaySales from '../components/TodaySales';
+import TrendingProducts from '../components/TrendingProducts';
+import MainCategories from '../components/MainCategories';
 
 const Home: React.FC = (): React.JSX.Element => {
   return (

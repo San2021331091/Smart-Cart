@@ -13,9 +13,8 @@ type Props = {
 const SearchBar: React.FC<Props> = ({ value, onChange, onSubmit, onFocus, onMicPress }) => {
   return (
     <View
-      className="rounded-xl px-4 flex-row items-center justify-between mb-2"
-      style={{ backgroundColor: 'rgba(255,255,255,0.9)', height: 48 }}
-    >
+      className="bg-[rgba(255,255,255,0.9)] rounded-xl px-4 flex-row items-center justify-between mb-2 h-[48]"
+  >
       <View className="flex-row items-center flex-1">
         <MaterialIcons name="search" size={24} color="#333" style={{ marginRight: 8 }} />
         <TextInput
