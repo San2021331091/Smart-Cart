@@ -62,15 +62,45 @@ Designed with a clean MVVM architecture following SOLID principles, promoting se
 
 ## 📸 App Screenshots
 
-<div align="center">
-  <img src="screenshorts/homescreen.png" width="45%" alt="Home Screen"/>
-  <img src="screenshorts/productItemsScreen.png" width="45%" alt="Items Screen"/>
-  <br/>
-  <img src="screenshorts/singleproductscreen.png" width="45%" alt="Product Single Screen"/>
-  <img src="screenshorts/cartscreen.png" width="45%" alt="Cart Screen"/>
-  <br/>
-  <img src="screenshorts/aichatscreen.png" width="45%" alt="AI Chat Screen"/>
-</div>
+<table align="center">
+  <tr>
+    <td><img src="screenshots/1.png" width="250"></td>
+    <td><img src="screenshots/2.png" width="250"></td>
+    <td><img src="screenshots/3.png" width="250"></td>
+  </tr>
+  <tr>
+    <td><img src="screenshots/4.png" width="250"></td>
+    <td><img src="screenshots/5.png" width="250"></td>
+    <td><img src="screenshots/6.png" width="250"></td>
+  </tr>
+  <tr>
+    <td><img src="screenshots/7.png" width="250"></td>
+    <td><img src="screenshots/8.png" width="250"></td>
+    <td><img src="screenshots/9.png" width="250"></td>
+  </tr>
+  <tr>
+    <td><img src="screenshots/10.png" width="250"></td>
+    <td><img src="screenshots/11.png" width="250"></td>
+    <td><img src="screenshots/12.png" width="250"></td>
+  </tr>
+  <tr>
+    <td><img src="screenshots/13.png" width="250"></td>
+    <td><img src="screenshots/14.png" width="250"></td>
+    <td><img src="screenshots/15.png" width="250"></td>
+  </tr>
+  <tr>
+    <td><img src="screenshots/16.png" width="250"></td>
+    <td><img src="screenshots/17.png" width="250"></td>
+    <td><img src="screenshots/18.png" width="250"></td>
+  </tr>
+  <tr>
+    <td><img src="screenshots/19.png" width="250"></td>
+    <td><img src="screenshots/20.png" width="250"></td>
+    <td><img src="screenshots/21.png" width="250"></td>
+  </tr>
+</table>
+
+
 
 
 
