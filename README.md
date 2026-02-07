@@ -98,6 +98,11 @@ Designed with a clean MVVM architecture following SOLID principles, promoting se
     <td><img src="screenshots/20.png" width="250"></td>
     <td><img src="screenshots/21.png" width="250"></td>
   </tr>
+    <tr>
+    <td><img src="screenshots/22.png" width="250"></td>
+    <td><img src="screenshots/23.png" width="250"></td>
+ 
+  </tr>
 </table>
 
 
